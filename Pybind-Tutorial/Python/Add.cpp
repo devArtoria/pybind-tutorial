@@ -8,6 +8,14 @@ PYBIND11_MODULE(pybind11Test, m)
 			pybind11 test
 		)pbdoc";
 
+	m.attr("the_answer") = 42;
+	
+	pybind11::object planet = pybind11::cast("earth");
+	m.attr("planet") = planet;
+
+	pybind11::object plane = pybind11::cast(PLANE);
+	m.attr("plane") = plane;
+
 	m.def("add", &add, "A function which adds two numbers");
 
 	m.def("divide", &divide, "A function which divides two numbers", 
