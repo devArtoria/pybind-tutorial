@@ -13,5 +13,6 @@ PYBIND11_MODULE(pybind11Test, m)
 	pybind11::class_<Util>(m, "Util")
 		.def("multi", &Util::multi)
 		.def("hello", &Util::hello)
+		.def("family", &Util::family, pybind11::arg("wife"), pybind11::arg("husband"))
 		.def(pybind11::init<>());
 }
