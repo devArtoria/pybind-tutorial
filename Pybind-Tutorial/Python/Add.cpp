@@ -21,6 +21,11 @@ PYBIND11_MODULE(pybind11Test, m)
 	m.def("divide", &divide, "A function which divides two numbers", 
 		pybind11::arg("i") = 6, pybind11::arg("j") = 3);
 
+	pybind11::class_<Pet>(m, "Pet")
+		.def(pybind11::init<const std::string &>())
+		.def("setName", &Pet::setName)
+		.def("getName", &Pet::getName);
+
 	pybind11::class_<Util>(m, "Util")
 		.def("multi", &Util::multi)
 		.def("hello", &Util::hello)
