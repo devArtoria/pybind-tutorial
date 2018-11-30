@@ -1,8 +1,8 @@
 # Target name
-set(target pybind11Test)
+set(target pyCore)
 
 # Define
-set(root_dir ${CMAKE_CURRENT_SOURCE_DIR}/..)
+set(root_dir ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 
 # Sources
 file(GLOB_RECURSE sources
@@ -20,4 +20,4 @@ set_target_properties(${target}
 target_link_libraries(${target}
 		PRIVATE
 		${DEFAULT_LINKER_OPTIONS}
-		pybind11Core)
+		Core)
