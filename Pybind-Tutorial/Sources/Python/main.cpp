@@ -1,4 +1,5 @@
 #include <Python/Calculator/Calculator.h>
+#include <Python/MyVector/MyVector.hpp>
 #include <pybind11/pybind11.h>
 
 PYBIND11_MODULE(pyCore, m)
@@ -10,6 +11,7 @@ PYBIND11_MODULE(pyCore, m)
 
 
 	AddCalculator(m);
+	AddMyVector(m);
 
 	m.attr("__version__") = pybind11::str("Dev");
 }
